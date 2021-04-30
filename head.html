@@ -1,0 +1,27 @@
+<meta charset="UTF-8" />
+		<meta name="description" content="System VTC firmy EKARD." />
+		<meta name="author" content="Natan Ryl" />
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="theme-color" content="#039BE5" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/fontawesome-all.css" />
+		
+		<script type="text/javascript">
+			function toggleMenu(){
+				var iconButton = document.getElementById("mobile_menu_icon");
+				var iconClass = document.getElementById("mobile_menu_icon").classList;
+				var menu = document.querySelector("nav");
+				if(iconClass == "fas fa-bars"){
+					iconButton.classList = "fas fa-times";
+					menu.classList.add("show_menu");
+				}
+				else{
+					iconButton.classList = "fas fa-bars";
+					menu.classList.remove("show_menu");
+				}
+			}
+		</script>

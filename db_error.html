@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="System VTC firmy E-KARD." />
+		<meta name="author" content="Natan Ryl" />
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" href="css/fontawesome-all.css" />
+
+		<title>EKARD VTC - Błąd łączenia z bazą danych!</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			@font-face {
+				font-family: 'Roboto-light';
+				src: url('webfonts/Roboto-Light.eot');
+				src: url('webfonts/Roboto-Light.eot?#iefix') format('embedded-opentype'),
+					url('webfonts/Roboto-Light.woff') format('woff'),
+					url('webfonts/Roboto-Light.ttf') format('truetype');
+				font-weight: 300;
+				font-style: normal;
+			}
+
+			body {
+				background-color: #3a4144;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				height: 100vh;
+			}
+
+			.error_title {
+				padding: 10px 15px;
+				background-color: #F44336;
+				color: #fff;
+				text-align: center;
+				text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+				max-width: 600px;
+				width: 90%;
+				font-size: 20px;
+			}
+
+			.error_block {
+				color: #fff;
+				text-align: center;
+				background-color: #4b5357;
+				text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+				font-family: 'Roboto-light', sans-serif;
+				font-size: 14px;
+				line-height: 25px;
+				padding: 10px 15px;
+				max-width: 600px;
+				width: 90%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="error_title">
+			Błąd łączenia z bazą danych!
+		</div>
+		<div class="error_block">
+			Nie można nawiązać połączenia z bazą danych.<br /><br />
+			Ta strona odświeży się automatycznie za <span class="timer">10 sekund.</span>
+		</div>
+		<script type="text/javascript">
+			setTimeout(function(){
+				window.location.assign("index");
+			}, 10000);
+
+			var startTime = 10;
+			var timer = document.querySelector(".timer");
+
+			setInterval(function countdown() {
+				startTime--;
+				if(startTime == 0){
+					timer.innerHTML = "0 sekund.";
+				}
+				else {
+					if(startTime == 1){
+						timer.innerHTML = "1 sekundę.";
+					}
+					else {
+						if(startTime > 1 && startTime < 5){
+							timer.innerHTML = startTime+" sekundy.";
+						}
+						else {
+							timer.innerHTML = startTime+" sekund.";
+						}
+					}
+				}
+			}, 1000);
+		</script>
+	</body>
+</html>
